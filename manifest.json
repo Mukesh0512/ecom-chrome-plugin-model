@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "E-commerce Product Extractor",
+  "version": "1.1",
+  "description": "Extract product information from Adidas website and compare with external data",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.adidas.co.in/*"], 
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "*://api.example.com/*" 
+  ]
+}
+
